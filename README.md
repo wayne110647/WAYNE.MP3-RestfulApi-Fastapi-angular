@@ -1,66 +1,89 @@
-อันนี้เป็นโปรเจค Mp3 ใช้ Angular + fastapi (Restfulapi) ในการทำสามารถคลิ๊กเข้าไปทดสอบได้
+WAYNE.MP3
+Retro Soul. Modern Code. Pure Sound.
+🇹🇭 ภาษาไทย
 
-📝 คำอธิบายโปรเจกต์ (ภาษาไทย)
-WAYNE.MP3 - ระบบเครื่องเล่นเพลง Full-stack (FastAPI + Angular)
+WAYNE.MP3 คือ Full-stack Music Web Application ที่ผสมผสานกลิ่นอายยุค 90s/Y2K เข้ากับ modern software architecture เพื่อสร้างประสบการณ์การฟังเพลงที่มากกว่าแค่ “กดเล่น”
 
-โปรเจกต์นี้คือเครื่องเล่นเพลงเว็บแอปพลิเคชันที่ผสมผสานดีไซน์ยุค 90s/Y2K เข้ากับเทคโนโลยีสมัยใหม่ โดยเน้นการจัดการข้อมูลผ่าน RESTful API อย่างมีประสิทธิภาพ
+โปรเจกต์นี้ได้รับแรงบันดาลใจจาก Sony Walkman และงานภาพของ Wong Kar-wai โดยนำความ nostalgic, cinematic, และ emotional design มาผสานเข้ากับเทคโนโลยี Full-stack สมัยใหม่
 
-Frontend: ใช้ Angular จัดการ UI ที่ซับซ้อนและการควบคุมระบบเสียง (Audio Control) แบบ Real-time
+WAYNE.MP3 ไม่ได้ถูกสร้างขึ้นเพื่อเป็นเพียง music player
+แต่มันคือการทดลองว่า Design + Sound + Software Engineering สามารถอยู่ร่วมกันได้อย่างลงตัว
 
-Backend: ใช้ FastAPI (Python) เป็นหัวใจหลักในการส่งข้อมูลเพลงและจัดการ Logic ต่างๆ ผ่าน API ที่รวดเร็ว
+“หยิบ Walkman จากปี 1997 แล้วเสียบเข้ากับ Internet ปี 2026” 📼⚡
 
-Concept: แรงบันดาลใจจาก Sony Walkman และงานภาพสไตล์ Wong Kar-wai เพื่อสร้างประสบการณ์การฟังเพลงที่แตกต่าง
+✨ Tech Stack
+🎛 Frontend
+Angular + TypeScript
+Custom Audio Controller
+Real-time Seek Bar
+Dynamic Volume Management
+Responsive UI Design
+⚡ Backend
+FastAPI + Python
+RESTful API
+Async Processing
+Low-latency Audio Streaming
+Clean API Architecture
+🎧 ความสามารถหลัก
+เล่นเพลงแบบ Real-time
+Seek เพลงแบบ Sync ทันที
+จัดการ Playlist
+Streaming ผ่าน RESTful API
+UI ได้แรงบันดาลใจจาก Walkman
+Architecture แยก Frontend / Backend ชัดเจน
+🇺🇸 English
 
-graph LR
-    subgraph "Frontend (Angular)"
-    A[User Interface / Walkman Design] --> B[Audio Service]
-    B --> C[HTTP Client]
-    end
+WAYNE.MP3 is a full-stack music web application that blends 90s/Y2K aesthetics with modern software architecture to create a listening experience beyond simply pressing play.
 
-    subgraph "Backend (FastAPI)"
-    C -- "JSON Request" --> D[RESTful API Endpoints]
-    D -- "Logic / Processing" --> E[Database / Music Storage]
-    E -- "Data / Stream" --> D
-    end
+Inspired by the iconic Sony Walkman and the cinematic visual language of Wong Kar-wai, this project combines nostalgia, emotion, and technology into one interactive platform.
 
-    D -- "JSON Response / MP3 Stream" --> C
-    C --> B
-    B --> A
+WAYNE.MP3 was not built to be just another music player.
+It is an experiment proving that Design + Sound + Software Engineering can coexist beautifully.
 
-    —
-    📝 Project Description (English Version)
-WAYNE.MP3 - A Full-stack Music Experience (FastAPI + Angular)
+“A Walkman from 1997, plugged into the internet of 2026.” 📼⚡
 
-This project is a modern web-based music player inspired by 90s/Y2K aesthetics, specifically the iconic Sony Walkman series. It demonstrates a seamless integration between a high-performance FastAPI backend and a reactive Angular frontend.
+✨ Tech Stack
+🎛 Frontend
+Angular + TypeScript
+Custom-built Audio Controller
+Real-time Seek Bar
+Dynamic Volume Management
+Responsive Component Architecture
+⚡ Backend
+FastAPI + Python
+High-performance RESTful API
+Asynchronous Processing
+Low-latency Audio Streaming
+Clean and Scalable API Design
+🎧 Key Features
+Real-time audio playback
+Instant seek synchronization
+Playlist management
+RESTful client-server communication
+Walkman-inspired interface
+Clean full-stack architecture
 
-Frontend: Developed with Angular (TypeScript), featuring a custom-built audio controller, real-time seek bar, and dynamic volume management.
 
-Backend: Powered by FastAPI (Python), providing a robust RESTful API to serve music data and stream audio files with minimal latency.
-
-Concept: Blending vintage hardware vibes with modern software architecture to deliver a unique user experience.
-
-
+🏗 System Architecture
 graph TD
-    subgraph "Client Side (Frontend)"
-    A["Angular Application (UI/UX)"] 
-    B["Audio Control Service"] 
-    C["REST API Client (HttpClient)"]
-    end
 
-    subgraph "Server Side (Backend)"
-    D["FastAPI Server"] 
-    E["Audio Data Streamer"] 
-    F["Music Files / Database"]
-    end
+subgraph Frontend [Angular Client]
+    UI[Walkman Interface]
+    AUDIO[Audio Engine]
+    HTTP[HTTP Client]
+end
 
-    %% Interaction Flow
-    A <--> B
-    B <--> C
-    C -- "HTTP GET/POST (JSON)" --> D
-    D <--> E
-    E <--> F
-    D -- "Stream Audio / JSON Response" --> C
+subgraph Backend [FastAPI Server]
+    API[RESTful API]
+    STREAM[Audio Stream Engine]
+    STORAGE[Music Storage]
+end
 
+UI <--> AUDIO
+AUDIO <--> HTTP
 
+HTTP -->|JSON Request| API
+API --> STREAM
+STREAM --> STORAGE
 
-    
+API -->|JSON + MP3 Stream| HTTP
