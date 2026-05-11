@@ -64,26 +64,30 @@ Walkman-inspired interface
 Clean full-stack architecture
 
 
-🏗 System Architecture
+
+## 🏗 System Architecture
+
+```mermaid
 graph TD
 
-subgraph Frontend [Angular Client]
-    UI[Walkman Interface]
-    AUDIO[Audio Engine]
-    HTTP[HTTP Client]
-end
+    subgraph Frontend [Angular Client]
+        UI[Walkman Interface]
+        AUDIO[Audio Engine]
+        HTTP[HTTP Client]
+    end
 
-subgraph Backend [FastAPI Server]
-    API[RESTful API]
-    STREAM[Audio Stream Engine]
-    STORAGE[Music Storage]
-end
+    subgraph Backend [FastAPI Server]
+        API[RESTful API]
+        STREAM[Audio Stream Engine]
+        STORAGE[Music Storage]
+    end
 
-UI <--> AUDIO
-AUDIO <--> HTTP
+    UI <--> AUDIO
+    AUDIO <--> HTTP
 
-HTTP -->|JSON Request| API
-API --> STREAM
-STREAM --> STORAGE
+    HTTP -->|JSON Request| API
+    API --> STREAM
+    STREAM --> STORAGE
 
-API -->|JSON + MP3 Stream| HTTP
+    API -->|JSON + MP3 Stream| HTTP
+```
