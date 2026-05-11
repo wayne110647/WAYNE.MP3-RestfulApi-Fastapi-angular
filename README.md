@@ -31,8 +31,16 @@ Seek เพลงแบบ Sync ทันที
 Streaming ผ่าน RESTful API
 UI ได้แรงบันดาลใจจาก Walkman
 Architecture แยก Frontend / Backend ชัดเจน
-🇺🇸 English
 
+
+——————
+
+
+
+
+
+
+🇺🇸 English
 WAYNE.MP3 is a full-stack music web application that blends 90s/Y2K aesthetics with modern software architecture to create a listening experience beyond simply pressing play.
 
 Inspired by the iconic Sony Walkman and the cinematic visual language of Wong Kar-wai, this project combines nostalgia, emotion, and technology into one interactive platform.
