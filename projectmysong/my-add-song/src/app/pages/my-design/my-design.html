@@ -1,0 +1,91 @@
+<div class="mysong-page">
+  <div class="main-content">
+
+    <div class="walkman-area">
+      <div class="walkman-body"> 
+        <img src="sony.png" alt="Walkman" class="walkman-hardware">
+        
+        <div class="walkman-screen">
+          <div class="screen-header">My Song</div>
+          <ul class="song-list">
+            @for (song of songs; track song.title) {
+              <li (click)="selectSong(song)" [class.active]="selectedSong === song">
+                {{ song.title }}
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="progress-container">
+    <div class="progress-bar" [style.width.%]="progress"></div>
+  </div>
+
+    <div class="album-visualization-area">
+      @if (selectedSong) {
+        <div class="album-frame">
+          <div class="album-wrapper" [class.playing]="isPlaying">
+          <img [src]="selectedSong.albumCover" alt="Album Cover" class="main-cover">
+          </div>
+          
+          <div class="song-info-large">
+            <h1 class="song-title">{{ selectedSong.title | uppercase }}</h1>
+            <p class="artist-name">BY <span>{{ selectedSong.artist | uppercase }}</span></p>
+          </div>
+        </div>
+      
+      }@else {
+        <div class="loading-state">
+      <p>SELECT A TRACK OR START ADDING...</p>
+    </div>
+      }
+  <div class="screen-overlay">
+    <ul class="song-list">
+      @for (song of songs; track song.id) {
+        <li (click)="selectSong(song)" [class.active]="selectedSong?.id === song.id">
+          {{ song.title }}
+        </li>
+      }
+    </ul>
+    
+    
+ <div class="play-btn-overlay" (click)="togglePlay()">
+    <span>{{ isPlaying ? '⏸' : '▶' }}</span>
+
+  
+  </div>
+  
+  <div class="progress-container">
+  <input 
+    type="range" 
+    class="seek-slider" 
+    min="0" 
+    [max]="audio.duration || 0" 
+    [value]="audio.currentTime" 
+    (input)="seekSong($event)">
+
+  
+  
+  <div class="time-info">
+    <span>{{ formatTime(audio.currentTime) }}</span> / <span>{{ formatTime(audio.duration) }}</span>
+  </div>
+  <div class="volume-container">
+              <span class="vol-icon">🔈</span>
+              <input 
+                type="range" 
+                class="vol-slider"
+                min="0" 
+                max="1" 
+                step="0.01" 
+                [value]="audio.volume" 
+                (input)="changeVolume($event)">
+              <span class="vol-icon">🔊</span>
+            </div>
+
+
+</div>
+</div>
+  </div> 
+    </div>
+  </div>

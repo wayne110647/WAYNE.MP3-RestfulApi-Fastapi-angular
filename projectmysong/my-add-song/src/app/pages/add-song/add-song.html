@@ -1,0 +1,46 @@
+<div class="addsong-wrapper">
+  <div class="addsong-content">
+    
+    <div class="preview-box">
+      <div class="album-card">
+        @if (newSong.albumCover) {
+          <img [src]="newSong.albumCover" class="walkman-display">
+        } @else {
+          <div class="no-image">NO COVER</div>
+        }
+        <div class="card-shadow"></div>
+      </div>
+    </div>
+
+    <div class="form-box">
+      <h2 class="form-title">NEW TRACK</h2>
+      
+      <div class="input-container">
+        <label>SONG NAME</label>
+        <input type="text" [(ngModel)]="newSong.title" placeholder="ชื่อเพลง...">
+      </div>
+
+      <div class="input-container">
+        <label>ARTIST</label>
+        <input type="text" [(ngModel)]="newSong.artist" placeholder="ชื่อศิลปิน...">
+      </div>
+
+      <div class="input-container">
+        <label>ALBUM COVER (URL)</label>
+        <input type="text" [(ngModel)]="newSong.albumCover" placeholder="ลิงก์รูปภาพ...">
+      </div>
+
+      <div class="input-container">
+        <label>SELECT MP3 FILE</label>
+        <input type="file" (change)="onFileSelected($event)" accept=".mp3" class="file-input">
+        
+        @if (selectedFile) {
+          <p class="file-name">Selected: {{ selectedFile?.name }}</p>
+        }
+      </div>
+
+      <button class="glow-btn" (click)="uploadSong()">ADD TO COLLECTION</button>
+    </div>
+
+  </div>
+</div>

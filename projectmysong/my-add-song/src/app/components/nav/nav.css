@@ -1,0 +1,75 @@
+.nav-wrapper {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+  gap: 30px;
+  z-index: 1000;
+}
+
+/* ส่วน Logo */
+/* กรอบวงกลม */
+.logo-circle {
+  width: 70px;  /* ขนาดวงกลมตามเรฟหน้า 1 */
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  border: 4px solid black;
+  justify-content: center;
+  overflow: hidden; /* ตัดส่วนเกินของรูปออก */
+  padding: 5px;    /* เพิ่มช่องว่างข้างในไม่ให้รูปชิดขอบวงกลมเกินไป */
+}
+
+/* ตัวรูป Logo */
+.logo-circle img {
+  width: 150%;      /* ให้รูปกว้างพอดีกรอบ */
+  height: 150%;     /* ให้รูปสูงพอดีกรอบ */
+  object-fit: contain; /* สำคัญ! ให้รูปย่อลงมาโดยไม่เสียสัดส่วนและเห็นครบทั้งโลโก้ */
+}
+
+.aboutme-text {
+  font-family: 'Impact', sans-serif;
+  font-size: 1.2rem;
+  display: block;
+  text-align: center;
+  margin-top: 5px;
+}
+
+/* ตัวแถบ Capsule สีน้ำตาล */
+.nav-capsule {
+  flex-grow: 1;
+  background-color: #5d5744; /* สีน้ำตาลหม่นตาม Ref */
+  height: 85px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 45px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* ฟอนต์เมนู MYSONG / ADDSONG */
+.nav-item {
+  font-family: 'Impact', sans-serif;
+  font-size: 3.5rem;
+  color: white;
+  text-decoration: none;
+  font-style: italic;
+  letter-spacing: -2px;
+  margin-right: 40px;
+  transition: 0.3s;
+}
+
+.nav-item:hover, .nav-item.active {
+  color: #dfd3b6; /* เปลี่ยนเป็นสีครีมเวลา Active */
+}
+
+.user-icon {
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+}

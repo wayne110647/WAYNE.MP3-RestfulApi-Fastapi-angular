@@ -1,0 +1,27 @@
+<nav class="nav-wrapper">
+  <div class="logo-section">
+    <div class="logo-circle">
+      <img src="logo.png" alt="Woayne Logo">
+    </div>
+    <span class="aboutme-text">ABOUTME</span>
+  </div>
+
+  <div class="nav-capsule">
+    <div class="nav-links">
+      <a routerLink="/" 
+         routerLinkActive="active" 
+         [routerLinkActiveOptions]="{exact: true}"
+         class="nav-item">HOME</a>
+      <a routerLink="/addsong" 
+         routerLinkActive="active" 
+         class="nav-item">ADDSONG</a>
+    <a routerLink="/mysong" 
+         routerLinkActive="active" 
+         class="nav-item">MYSONG</a>
+    </div>
+
+    <div class="user-icon">
+      <i class="fa-solid fa-circle-user"></i>
+    </div>
+  </div>
+</nav>

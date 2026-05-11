@@ -1,0 +1,117 @@
+/* 1. สีพื้นหลังครีมกระดาษเก่าตาม Ref */
+.home-container {
+  background-color: #dfd3b6; 
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 2. วงกลมดำหนาๆ วงนอก */
+.big-circle-border {
+  position: absolute;
+  width: 850px;
+  height: 850px;
+  border: 45px solid black;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* 3. จัดตัวอักษร Woayne ให้ใหญ่ยักษ์และแน่น */
+.text-woayne {
+  font-family: 'Impact', sans-serif;
+  font-size: 320px;
+  line-height: 0.8;
+  letter-spacing: -25px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* จุดดำในตัว W */
+.dot-black {
+  display: inline-block;
+  width: 190px;
+  height: 190px;
+  background-color: black;
+  border-radius: 50%;
+  margin: 0 -25px;
+}
+
+.text-store {
+  font-family: 'Impact', sans-serif;
+  font-size: 110px;
+  letter-spacing: 0.25em;
+  text-align: center;
+  margin-top: -30px;
+}
+
+/* 4. กองอัลบั้ม (ขยับได้) */
+.album-interaction-zone {
+  position: absolute;
+  left: 28%; /* ตำแหน่งทับตัว W ตามรูป */
+  top: 38%;
+  cursor: pointer;
+}
+
+.album-img {
+  width: 220px;
+  border: 5px solid white;
+  box-shadow: 10px 10px 30px rgba(0,0,0,0.3);
+  position: absolute;
+  transition: all 0.5s ease;
+}
+
+.album-front { position: relative; z-index: 3; }
+.album-mid { z-index: 2; transform: rotate(5deg); }
+.album-back { z-index: 1; transform: rotate(-10deg); }
+
+/* สั่งให้คลี่ออกตอน Hover */
+.album-img {
+  width: 300px; /* ขนาดใหม่ ใหญ่กว่าเดิม 2 เท่า */
+  border: 10px solid white; /* ขอบหนาขึ้นตามขนาดรูป */
+  box-shadow: 20px 20px 50px rgba(0,0,0,0.5); /* เงาเข้มขึ้นเพื่อให้ดูมีมิติ */
+  position: absolute;
+  transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+/* ปรับระยะการคลี่ออกตอน Hover ให้กว้างขึ้นเพื่อให้เห็นรูปหลังชัดๆ */
+.album-interaction-zone:hover .album-mid {
+  transform: rotate(15deg) translate(120px, -40px);
+}
+
+.album-interaction-zone:hover .album-back {
+  transform: rotate(-25deg) translate(-120px, -60px);
+}
+
+.album-interaction-zone:hover .album-front {
+  transform: scale(1.1) translateY(-30px);
+}
+
+/* คำอธิบาย (ซ่อนไว้ก่อน) */
+.hover-instruction {
+  position: absolute;
+  top: -80px;
+  right: -250px;
+  width: 280px;
+  font-weight: 900;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.album-interaction-zone:hover .hover-instruction {
+  opacity: 1;
+}
+
+.liam-hero {
+  position: absolute;
+  right: 1%;
+  bottom: 0;
+  height: 100vh; /* ให้สูงเกือบเต็มจอ */
+  z-index: 10;
+  filter: grayscale(1) contrast(1.2); /* แต่งสีขาวดำเข้มๆ แบบในรูป */
+  pointer-events: none;
+}
